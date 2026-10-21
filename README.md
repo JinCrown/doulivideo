@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/images/app-icon.png" alt="抖哩看视频图标" width="112" height="112">
+<img src="docs/images/app-logo.png" alt="抖哩看视频图标" width="112" height="112">
 
 <h1>抖哩看视频</h1>
 
@@ -53,45 +53,29 @@ GitHub 自动生成的 `Source code` 压缩包只包含本仓库的介绍资料�
 
 - 内测版本免费分享，手机型号、系统和平台接口可能影响部分功能。
 - 安装包使用独立发布签名。若曾安装本地测试包，签名可能不同；请先导出需要保留的数据，再按系统提示处理，避免直接卸载丢失记录。
-- 校验信息和第三方组件材料见每个版本的发布附件。
+- 校验信息和第三方组件材料集中放在 [版本材料页](docs/releases/v0.35.4-beta.1/README.md)。
 
 **QQ 交流群：1126192808**。聊使用体验、报 Bug、提好建议，都欢迎。<br>
 也可以提交 [Issue](https://github.com/JinCrown/doulivideo/issues)，附上手机型号、Android 版本、软件版本和复现步骤。
 
-## 看看界面
+## 手机界面
 
-首页找内容，播放器管收听，字幕页跟上正在听的那一句。
-
-<table>
-  <tr><th align="center">首页推荐</th><th align="center">专注收听</th><th align="center">同步字幕</th></tr>
-  <tr>
-    <td align="center"><img src="docs/images/home-light.png" alt="首页推荐示意" width="230"></td>
-    <td align="center"><img src="docs/images/player-light.png" alt="收听播放器示意" width="230"></td>
-    <td align="center"><img src="docs/images/subtitles-light.png" alt="同步字幕示意" width="230"></td>
-  </tr>
-</table>
+以下为手机实机截图，个人信息已打马赛克。
 
 <table>
-  <tr><th align="center">发现作者</th><th align="center">我的收藏</th><th align="center">我的收听</th></tr>
+  <tr><th align="center">B站首页</th><th align="center">抖音首页</th><th align="center">听视频播放器</th></tr>
   <tr>
-    <td align="center"><img src="docs/images/recommendations-light.png" alt="作者推荐示意" width="230"></td>
-    <td align="center"><img src="docs/images/favorites-light.png" alt="收藏页面示意" width="230"></td>
-    <td align="center"><img src="docs/images/mine-light.png" alt="我的页面示意" width="230"></td>
+    <td align="center"><img src="docs/images/bili-home.png" alt="B站首页实机截图" width="230"></td>
+    <td align="center"><img src="docs/images/douyin-home.png" alt="抖音首页实机截图" width="230"></td>
+    <td align="center"><img src="docs/images/player-listen.png" alt="听视频播放器实机截图" width="230"></td>
+  </tr>
+  <tr><th align="center">看视频播放器</th><th align="center">我的</th><th align="center">收藏</th></tr>
+  <tr>
+    <td align="center"><img src="docs/images/player-watch.png" alt="看视频播放器实机截图" width="230"></td>
+    <td align="center"><img src="docs/images/mine.png" alt="我的页面，个人信息已打码" width="230"></td>
+    <td align="center"><img src="docs/images/favorites.png" alt="收藏页面，个人信息已打码" width="230"></td>
   </tr>
 </table>
-
-<details>
-<summary>也有深色模式，点这里看看</summary>
-
-<p>
-  <img src="docs/images/home-dark.png" alt="深色首页示意" width="230">
-  <img src="docs/images/player-dark.png" alt="深色播放器示意" width="230">
-  <img src="docs/images/settings-dark.png" alt="深色设置示意" width="230">
-</p>
-
-</details>
-
-<sub>沿用原项目的示例界面截图，封面、账号和播放量为展示数据；布局会随版本更新，当前实际界面以安装包为准。</sub>
 
 ## 听起来，有这些方便
 
@@ -146,14 +130,7 @@ B站与抖音都可选择**仅音频**或**视频（含声音）**。
 
 小组件让你不用进入应用，也能控制当前收听。
 
-<table>
-  <tr><th align="center">唱片 · 2×2</th><th align="center">封面 · 2×2</th><th align="center">播放条</th></tr>
-  <tr>
-    <td align="center"><img src="docs/images/widget-vinyl.png" alt="唱片小组件示意" width="170"></td>
-    <td align="center"><img src="docs/images/widget-cover.png" alt="封面小组件示意" width="170"></td>
-    <td align="center"><img src="docs/images/widget-strip.png" alt="播放条小组件示意" width="280"></td>
-  </tr>
-</table>
+
 
 ## 项目说明
 
@@ -163,7 +140,7 @@ B站与抖音都可选择**仅音频**或**视频（含声音）**。
 本应用不是 B站或抖音官方客户端，未获平台官方授权；平台接口、账号权限和验证要求变化可能影响功能。
 视频、音频、字幕、头像及平台标识的权利归各自权利人。
 
-第三方组件遵循各自许可证，相关许可随 APK 打包；SoundTouch 的对应组件源码和替换说明随版本单独附上，**不包含应用业务源码**。
+第三方组件遵循各自许可证，相关许可随 APK 打包；SoundTouch 的对应组件源码和替换说明见 [版本材料页](docs/releases/v0.35.4-beta.1/README.md)，**不包含应用业务源码**。
 
 [隐私与本地数据](docs/PRIVACY.md) · [第三方说明](THIRD_PARTY_NOTICES.txt)
 
