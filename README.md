@@ -11,11 +11,12 @@
 <p>
   <a href="https://github.com/JinCrown/doulivideo/releases/latest"><img src="https://img.shields.io/github/v/release/JinCrown/doulivideo?include_prereleases&amp;style=flat-square&amp;color=333333" alt="当前版本"></a>
   <img src="https://img.shields.io/badge/Android-8.0%2B-3DDC84?style=flat-square&amp;logo=android&amp;logoColor=white" alt="Android 8.0 及以上">
+  <img src="https://img.shields.io/badge/Windows-10%2F11_x64-0078D4?style=flat-square" alt="Windows 10/11 x64">
   <img src="https://img.shields.io/badge/应用源码-不公开-555555?style=flat-square" alt="应用源码不公开">
 </p>
 
 <p>
-  <a href="https://github.com/JinCrown/doulivideo/releases/latest">下载 APK</a> ·
+  <a href="https://github.com/JinCrown/doulivideo/releases/latest">下载手机版与电脑版</a> ·
   <a href="https://github.com/JinCrown/doulivideo/issues">反馈问题</a> ·
   <a href="docs/PRIVACY.md">隐私与本地数据</a>
 </p>
@@ -46,19 +47,18 @@
 
 ## 下载与交流
 
-**Android 8.0 及以上**：[前往下载最新 APK](https://github.com/JinCrown/doulivideo/releases/latest)。
+| 设备 | 最新版本 | 安装包 |
+| --- | --- | --- |
+| Android 8.0 及以上 | **0.35.9-beta.1** | [下载手机版 APK](https://github.com/JinCrown/doulivideo/releases/download/v0.35.9-beta.1/doulivideo-0.35.9-beta.1.apk) |
+| Windows 10/11 x64 | **0.14.13-beta.1** | [下载电脑版安装器](https://github.com/JinCrown/doulivideo/releases/download/v0.35.9-beta.1/DouliListen-0.14.13-beta.1-windows-x64-setup.exe) |
 
-当前手机版：**0.35.8-beta.1**（2026-10-23）。本次优化首页预加载、抖音搜索、歌词与收藏夹读取，以及 B站直播推荐的首批展示。[查看更新内容](RELEASE_NOTES.md)。
+2026-10-23 更新：手机版的 B站直播优先展示关注中正在开播的主播；电脑版更新收藏夹与合集封面网格、宽屏布局和下载目录。
+[查看更新内容](RELEASE_NOTES.md) · [完整发布页](https://github.com/JinCrown/doulivideo/releases/tag/v0.35.9-beta.1) · [校验与第三方组件材料](docs/releases/v0.35.9-beta.1/README.md)。
 
-普通用户下载版本页面中的 **`.apk` 安装包** 即可。
-GitHub 自动生成的 `Source code` 压缩包只包含本仓库的介绍资料，不是手机安装包，也不是应用源码。
+普通用户按设备下载 **APK** 或 **Windows setup.exe** 即可，不需要下载 GitHub 自动生成的 Source code 压缩包。
+Android 沿用原有发布签名；Windows 使用固定自签名内测身份，仍可能显示系统信任提示。具体升级、签名及校验说明见版本材料页。
 
-- 内测版本免费分享，手机型号、系统和平台接口可能影响部分功能。
-- 安装包使用独立发布签名。若曾安装本地测试包，签名可能不同；请先导出需要保留的数据，再按系统提示处理，避免直接卸载丢失记录。
-- 校验信息和第三方组件材料集中放在 [版本材料页](docs/releases/v0.35.8-beta.1/README.md)。
-
-**QQ 交流群：1126192808**。聊使用体验、报 Bug、提好建议，都欢迎。<br>
-也可以提交 [Issue](https://github.com/JinCrown/doulivideo/issues)，附上手机型号、Android 版本、软件版本和复现步骤。
+**QQ 交流群：1126192808**。也可以提交 [Issue](https://github.com/JinCrown/doulivideo/issues)，附设备型号、系统版本、软件版本与复现步骤。
 
 ## 手机界面
 
@@ -78,6 +78,18 @@ GitHub 自动生成的 `Source code` 压缩包只包含本仓库的介绍资料�
     <td align="center"><img src="docs/images/favorites.png" alt="收藏页面，个人信息已打码" width="230"></td>
   </tr>
 </table>
+
+## 电脑版界面
+
+以下是 0.14.13 的实际界面渲染预览，使用隔离样例数据；封面由测试代码绘制，不是用户的真实收藏。
+
+**B站 · 我的收藏**
+
+<img src="docs/images/desktop-bili-library.png" alt="电脑版 B站收藏夹封面网格预览（样例数据）" width="1100">
+
+**抖音 · 喜欢**
+
+<img src="docs/images/desktop-douyin-likes.png" alt="电脑版抖音喜欢页面预览（样例数据）" width="1100">
 
 ## 听起来，有这些方便
 
@@ -142,7 +154,7 @@ B站与抖音都可选择**仅音频**或**视频（含声音）**。
 本应用不是 B站或抖音官方客户端，未获平台官方授权；平台接口、账号权限和验证要求变化可能影响功能。
 视频、音频、字幕、头像及平台标识的权利归各自权利人。
 
-第三方组件遵循各自许可证，相关许可随 APK 打包；SoundTouch 的对应组件源码和替换说明见 [版本材料页](docs/releases/v0.35.8-beta.1/README.md)，**不包含应用业务源码**。
+第三方组件遵循各自许可证，相关许可随安装包提供；SoundTouch 的对应组件源码和替换说明见 [版本材料页](docs/releases/v0.35.9-beta.1/README.md)，**不包含应用业务源码**。
 
 [隐私与本地数据](docs/PRIVACY.md) · [第三方说明](THIRD_PARTY_NOTICES.txt)
 
