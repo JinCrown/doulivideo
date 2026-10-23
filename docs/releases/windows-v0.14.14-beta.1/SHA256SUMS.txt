@@ -1,0 +1,4 @@
+967c00038a4fbb451de0909f317b877d9360a18275a816e7e874d6fb99352d39  DouliListen-0.14.14-beta.1-windows-x64-setup.exe
+df7a4538fa8dddd8f14bb9137bcedac53e2a6185787d56769714f8e46866474f  Windows-native-audio-component-source.zip
+bc7dd09cb7ff78a5fa43f99b0d01379ad0926a1c7cb46b5ef7a309f5f108a02d  Windows-third-party-notices.zip
+6b7d4ef720fd83b29d6627b5f02fe5bb353b32f10f6653af82d75d7e83f55483  DouliListen-Windows-Beta.cer

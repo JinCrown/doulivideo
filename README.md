@@ -50,10 +50,10 @@
 | 设备 | 最新版本 | 安装包 |
 | --- | --- | --- |
 | Android 8.0 及以上 | **0.35.9-beta.1** | [下载手机版 APK](https://github.com/JinCrown/doulivideo/releases/download/v0.35.9-beta.1/doulivideo-0.35.9-beta.1.apk) |
-| Windows 10/11 x64 | **0.14.13-beta.1** | [下载电脑版安装器](https://github.com/JinCrown/doulivideo/releases/download/v0.35.9-beta.1/DouliListen-0.14.13-beta.1-windows-x64-setup.exe) |
+| Windows 10/11 x64 | **0.14.14-beta.1** | [下载电脑版安装器](https://github.com/JinCrown/doulivideo/releases/download/windows-v0.14.14-beta.1/DouliListen-0.14.14-beta.1-windows-x64-setup.exe) |
 
-2026-10-23 更新：手机版的 B站直播优先展示关注中正在开播的主播；电脑版更新收藏夹与合集封面网格、宽屏布局和下载目录。
-[查看更新内容](RELEASE_NOTES.md) · [完整发布页](https://github.com/JinCrown/doulivideo/releases/tag/v0.35.9-beta.1) · [校验与第三方组件材料](docs/releases/v0.35.9-beta.1/README.md)。
+2026-10-23 更新：电脑版调整平台切换按钮，合并播放页入口并清理本机收藏按钮；手机版仍为 0.35.9-beta.1。
+[查看更新内容](RELEASE_NOTES.md) · [完整发布页](https://github.com/JinCrown/doulivideo/releases/tag/windows-v0.14.14-beta.1) · [电脑版校验与组件材料](docs/releases/windows-v0.14.14-beta.1/README.md) · [手机版校验与组件材料](docs/releases/v0.35.9-beta.1/README.md)。
 
 普通用户按设备下载 **APK** 或 **Windows setup.exe** 即可，不需要下载 GitHub 自动生成的 Source code 压缩包。
 Android 沿用原有发布签名；Windows 使用固定自签名内测身份，仍可能显示系统信任提示。具体升级、签名及校验说明见版本材料页。
@@ -81,7 +81,7 @@ Android 沿用原有发布签名；Windows 使用固定自签名内测身份，�
 
 ## 电脑版界面
 
-以下是 0.14.13 的实际界面渲染预览，使用隔离样例数据；封面由测试代码绘制，不是用户的真实收藏。
+以下是 0.14.14 的实际界面渲染预览，使用隔离样例数据；封面由测试代码绘制，不是用户的真实收藏。
 
 **B站 · 我的收藏**
 
