@@ -51,12 +51,15 @@
 | --- | --- | --- |
 | Android 8.0 及以上 | **0.36.5-beta.1** | [下载手机版 APK](https://github.com/JinCrown/doulivideo/releases/download/v0.36.5-beta.1/doulivideo-0.36.5-beta.1.apk) |
 | Windows 10/11 x64 | **0.14.22-beta.1** | [下载电脑版安装器](https://github.com/JinCrown/doulivideo/releases/download/v0.36.5-beta.1/DouliListen-0.14.22-beta.1-windows-x64-setup.exe) |
+| macOS · Apple Silicon（M 系列） | **0.14.22-beta.1 测试版** | [下载 ARM64 DMG](https://github.com/JinCrown/doulivideo/releases/download/v0.36.5-beta.1/DouliListen-0.14.22-beta.1-macos-arm64.dmg) |
 
 2026-10-25 更新：手机和电脑、B站和抖音均新增可搜索及排序的关注作者列表；同时补齐关注内容页、播放器评论与字幕开关，并修复电脑版加载及播放状态冲突。
 [查看更新内容](RELEASE_NOTES.md) · [完整发布页](https://github.com/JinCrown/doulivideo/releases/tag/v0.36.5-beta.1) · [电脑版校验与组件材料](docs/releases/v0.36.5-beta.1/README.md) · [手机版校验与组件材料](docs/releases/v0.36.5-beta.1/README.md)。
 
-普通用户按设备下载 **APK** 或 **Windows setup.exe** 即可，不需要下载 GitHub 自动生成的 Source code 压缩包。
+普通用户按设备下载 **APK**、**Windows setup.exe** 或对应芯片的 **Mac DMG** 即可，不需要下载 GitHub 自动生成的 Source code 压缩包。
 Android 沿用原有发布签名；Windows 使用固定自签名内测身份，仍可能显示系统信任提示。具体升级、签名及校验说明见版本材料页。
+
+Mac 测试包包含 Java、播放和登录运行库，无需另外安装 Java、VLC 或 FFmpeg。打开 DMG 后将应用拖到 Applications。本包使用临时本地签名，未取得 Apple Developer ID 签名及公证；首次被系统阻止时，可在「系统设置 → 隐私与安全」按提示选择「仍要打开」。已在 macOS 15 云构建机验证，真实账号和不同 Mac 设备仍需测试。
 
 **QQ 交流群：1126192808**。也可以提交 [Issue](https://github.com/JinCrown/doulivideo/issues)，附设备型号、系统版本、软件版本与复现步骤。
 
