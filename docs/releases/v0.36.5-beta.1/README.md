@@ -19,15 +19,17 @@ Mac 测试包分别提供 Apple Silicon（ARM64）和 Intel（x64）版本。打
 
 Mac 本地资料及默认下载分别位于 `~/Library/Application Support/DouliListenDesktop` 与其 `downloads` 子目录，更新应用时不必清空这些目录。
 
-## 可下载的组件材料
+## 校验与组件材料
 
-- [SHA256SUMS.txt](https://github.com/JinCrown/doulivideo/releases/download/v0.36.5-beta.1/SHA256SUMS.txt)：安装包与附件哈希。
-- [SoundTouch-2.4.1-corresponding-source.zip](https://github.com/JinCrown/doulivideo/releases/download/v0.36.5-beta.1/SoundTouch-2.4.1-corresponding-source.zip)：与本次 APK 配套的 SoundTouch 上游源码、JNI 适配及构建说明。
-- [Android-third-party-notices.zip](https://github.com/JinCrown/doulivideo/releases/download/v0.36.5-beta.1/Android-third-party-notices.zip)：本次 APK 配套的第三方许可证和声明。
-- [Windows-native-audio-component-source.zip](https://github.com/JinCrown/doulivideo/releases/download/v0.36.5-beta.1/Windows-native-audio-component-source.zip)：Windows 原生音频输出及音量均衡组件源码、许可和构建脚本。
-- [Windows-third-party-notices.zip](https://github.com/JinCrown/doulivideo/releases/download/v0.36.5-beta.1/Windows-third-party-notices.zip)：桌面运行组件的第三方声明与许可。
-- [Mac-native-audio-component-source.zip](https://github.com/JinCrown/doulivideo/releases/download/v0.36.5-beta.1/Mac-native-audio-component-source.zip)：Mac 音量均衡桥接、输出观察组件、许可与重建脚本。
-- [SHA256SUMS-macos-arm64.txt](https://github.com/JinCrown/doulivideo/releases/download/v0.36.5-beta.1/SHA256SUMS-macos-arm64.txt) / [SHA256SUMS-macos-x64.txt](https://github.com/JinCrown/doulivideo/releases/download/v0.36.5-beta.1/SHA256SUMS-macos-x64.txt)：对应架构 DMG 的构建校验清单。
+以下材料单独保存在仓库中；发布页下载区只提供四个安装包。
+
+- [SHA256SUMS.txt](https://github.com/JinCrown/doulivideo/raw/refs/heads/main/docs/releases/v0.36.5-beta.1/materials/SHA256SUMS.txt)：安装包与附件哈希。
+- [SoundTouch-2.4.1-corresponding-source.zip](https://github.com/JinCrown/doulivideo/raw/refs/heads/main/docs/releases/v0.36.5-beta.1/materials/SoundTouch-2.4.1-corresponding-source.zip)：与本次 APK 配套的 SoundTouch 上游源码、JNI 适配及构建说明。
+- [Android-third-party-notices.zip](https://github.com/JinCrown/doulivideo/raw/refs/heads/main/docs/releases/v0.36.5-beta.1/materials/Android-third-party-notices.zip)：本次 APK 配套的第三方许可证和声明。
+- [Windows-native-audio-component-source.zip](https://github.com/JinCrown/doulivideo/raw/refs/heads/main/docs/releases/v0.36.5-beta.1/materials/Windows-native-audio-component-source.zip)：Windows 原生音频输出及音量均衡组件源码、许可和构建脚本。
+- [Windows-third-party-notices.zip](https://github.com/JinCrown/doulivideo/raw/refs/heads/main/docs/releases/v0.36.5-beta.1/materials/Windows-third-party-notices.zip)：桌面运行组件的第三方声明与许可。
+- [Mac-native-audio-component-source.zip](https://github.com/JinCrown/doulivideo/raw/refs/heads/main/docs/releases/v0.36.5-beta.1/materials/Mac-native-audio-component-source.zip)：Mac 音量均衡桥接、输出观察组件、许可与重建脚本。
+- [SHA256SUMS-macos-arm64.txt](https://github.com/JinCrown/doulivideo/raw/refs/heads/main/docs/releases/v0.36.5-beta.1/materials/SHA256SUMS-macos-arm64.txt) / [SHA256SUMS-macos-x64.txt](https://github.com/JinCrown/doulivideo/raw/refs/heads/main/docs/releases/v0.36.5-beta.1/materials/SHA256SUMS-macos-x64.txt)：对应架构 DMG 的构建校验清单。
 - [Windows 内测公开证书](DouliListen-Windows-Beta.cer)：供核对签名使用，无需导入证书即可使用软件。
 
 组件材料不包含应用业务源码。GitHub 自动生成的 Source code 压缩包仅包含本仓库公开介绍资料与历史组件材料。

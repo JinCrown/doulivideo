@@ -98,7 +98,7 @@ jobs:
           [[ "${#files[@]}" == 1 && -f "${files[0]}" ]]
           folder="$(dirname "${files[0]}")"
           (cd "$folder" && shasum -a 256 -c "SHA256SUMS-macos-$BUILD_ARCH.txt")
-          gh release upload "$RELEASE_TAG" "${files[0]}" "$folder/SHA256SUMS-macos-$BUILD_ARCH.txt" --repo "$GITHUB_REPOSITORY"
+          gh release upload "$RELEASE_TAG" "${files[0]}" --repo "$GITHUB_REPOSITORY"
       - name: Encrypt private build diagnostics
         if: always()
         shell: bash
