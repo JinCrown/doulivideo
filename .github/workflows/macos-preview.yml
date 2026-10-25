@@ -1,0 +1,106 @@
+name: Mac preview installers
+on:
+  workflow_dispatch:
+    inputs:
+      source_sha256:
+        description: SHA-256 of the private source archive
+        required: true
+        type: string
+      release_tag:
+        description: Existing public release to receive installers
+        required: true
+        default: v0.36.5-beta.1
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: mac-preview-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  package:
+    if: github.event_name == 'workflow_dispatch' && github.actor == github.repository_owner
+    name: macOS ${{ matrix.arch }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-15
+            arch: arm64
+          - runner: macos-15-intel
+            arch: x64
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 55
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Fetch private build input
+        env:
+          SOURCE_URL: ${{ secrets.DOULI_MAC_SOURCE_URL }}
+          SOURCE_HASH: ${{ inputs.source_sha256 }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$SOURCE_HASH" =~ ^[a-f0-9]{64}$ ]]
+          test -n "$SOURCE_URL"
+          work="$RUNNER_TEMP/douli-private"
+          mkdir -p "$work/source"
+          curl --fail --silent --show-error --location --retry 3 "$SOURCE_URL" -o "$work/source.tar.gz" 2>"$work/download.log"
+          echo "$SOURCE_HASH  $work/source.tar.gz" | shasum -a 256 -c -
+          tar -xzf "$work/source.tar.gz" -C "$work/source"
+          rm "$work/source.tar.gz"
+          echo 'Private build input verified.'
+      - name: Build, test and verify Mac package
+        id: build
+        shell: bash
+        run: |
+          set -euo pipefail
+          work="$RUNNER_TEMP/douli-private"
+          cd "$work/source"
+          if bash scripts/build-macos-preview.sh >"$work/build.log" 2>&1; then
+            echo 'Compilation, tests, native playback, architecture and package checks passed.'
+          else
+            echo 'Mac build failed. Diagnostics are encrypted for the project owner.'
+            exit 1
+          fi
+      - name: Upload verified installers to existing release
+        if: steps.build.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_TAG: ${{ inputs.release_tag }}
+          BUILD_ARCH: ${{ matrix.arch }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$RELEASE_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+-beta\.[0-9]+$ ]]
+          root="$RUNNER_TEMP/douli-private/source/release"
+          files=("$root"/*/DouliListen-*-macos-"$BUILD_ARCH".dmg)
+          [[ "${#files[@]}" == 1 && -f "${files[0]}" ]]
+          folder="$(dirname "${files[0]}")"
+          (cd "$folder" && shasum -a 256 -c "SHA256SUMS-macos-$BUILD_ARCH.txt")
+          gh release upload "$RELEASE_TAG" "${files[0]}" "$folder/SHA256SUMS-macos-$BUILD_ARCH.txt" --repo "$GITHUB_REPOSITORY"
+      - name: Encrypt private build diagnostics
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          work="$RUNNER_TEMP/douli-private"
+          mkdir -p "$work" "$RUNNER_TEMP/douli-diagnostics"
+          touch "$work/build.log" "$work/download.log"
+          tar -czf "$work/diagnostics.tar.gz" -C "$work" build.log download.log
+          openssl rand -out "$work/log.pass" 32
+          openssl enc -aes-256-cbc -salt -pbkdf2 -iter 200000 -in "$work/diagnostics.tar.gz" -out "$RUNNER_TEMP/douli-diagnostics/build.tar.gz.enc" -pass "file:$work/log.pass"
+          openssl pkeyutl -encrypt -pubin -inkey .github/mac-log-public.pem -in "$work/log.pass" -out "$RUNNER_TEMP/douli-diagnostics/log.key.enc" -pkeyopt rsa_padding_mode:oaep -pkeyopt rsa_oaep_md:sha256
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mac-diagnostics-${{ matrix.arch }}
+          path: ${{ runner.temp }}/douli-diagnostics/*
+          retention-days: 1
+          if-no-files-found: error
