@@ -4,3 +4,6 @@ ab73724cc3d992460259fd0a41f22ee9d6219b8721d1c3129704681edb47f8a4  DouliListen-0.
 176d2bd22afb20aa3b47a10c2dff578a1043b542c26d6d8aa219a80c659689c9  SoundTouch-2.4.1-corresponding-source.zip
 f3636f8d65a8e2f3dfda5727482bc19ed46fa1a26291aec7f34cc4206d33e802  Windows-native-audio-component-source.zip
 73ca1d1a5c94b468b62f9edf324312522d8869d6e8e29e43c6b45240347dcb13  Windows-third-party-notices.zip
+c3f6c56705fd901933b8089d830ed92c321e026bba2b22506fb84e046199e161  DouliListen-0.14.22-beta.1-macos-arm64.dmg
+28b9422f175188fcdca3305bce073858c60934b1e6a818a58de33f2042553597  DouliListen-0.14.22-beta.1-macos-x64.dmg
+fa9c15ebca4beb965e7dcc0176ece021819fb380a546542a66a24ece854040f2  Mac-native-audio-component-source.zip
