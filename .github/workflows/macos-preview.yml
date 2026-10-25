@@ -11,6 +11,12 @@ on:
         required: true
         default: v0.36.5-beta.1
         type: string
+      architecture:
+        description: Architectures to build (retry only the missing installer)
+        required: true
+        default: both
+        type: choice
+        options: [both, arm64, x64]
 permissions:
   contents: read
 concurrency:
@@ -23,11 +29,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - runner: macos-15
-            arch: arm64
-          - runner: macos-15-intel
-            arch: x64
+        include: ${{ fromJSON(inputs.architecture == 'arm64' && '[{"runner":"macos-15","arch":"arm64"}]' || inputs.architecture == 'x64' && '[{"runner":"macos-15-intel","arch":"x64"}]' || '[{"runner":"macos-15","arch":"arm64"},{"runner":"macos-15-intel","arch":"x64"}]') }}
     runs-on: ${{ matrix.runner }}
     timeout-minutes: 55
     permissions:
@@ -116,4 +118,3 @@ jobs:
           path: ${{ runner.temp }}/douli-diagnostics/*
           retention-days: 1
           if-no-files-found: error
-
