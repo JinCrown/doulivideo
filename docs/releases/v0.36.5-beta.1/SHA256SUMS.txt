@@ -1,0 +1,6 @@
+472df044c45169a5e9ca3b256cb85f13c0e79689319f119d611fdfd0f23275a8  doulivideo-0.36.5-beta.1.apk
+ab73724cc3d992460259fd0a41f22ee9d6219b8721d1c3129704681edb47f8a4  DouliListen-0.14.22-beta.1-windows-x64-setup.exe
+80db852e132255586b47573ce993b1ec2d14b011708e1fd572f5d67e2c028fef  Android-third-party-notices.zip
+176d2bd22afb20aa3b47a10c2dff578a1043b542c26d6d8aa219a80c659689c9  SoundTouch-2.4.1-corresponding-source.zip
+f3636f8d65a8e2f3dfda5727482bc19ed46fa1a26291aec7f34cc4206d33e802  Windows-native-audio-component-source.zip
+73ca1d1a5c94b468b62f9edf324312522d8869d6e8e29e43c6b45240347dcb13  Windows-third-party-notices.zip

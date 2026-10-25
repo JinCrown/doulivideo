@@ -49,11 +49,11 @@
 
 | 设备 | 最新版本 | 安装包 |
 | --- | --- | --- |
-| Android 8.0 及以上 | **0.35.9-beta.1** | [下载手机版 APK](https://github.com/JinCrown/doulivideo/releases/download/v0.35.9-beta.1/doulivideo-0.35.9-beta.1.apk) |
-| Windows 10/11 x64 | **0.14.14-beta.1** | [下载电脑版安装器](https://github.com/JinCrown/doulivideo/releases/download/windows-v0.14.14-beta.1/DouliListen-0.14.14-beta.1-windows-x64-setup.exe) |
+| Android 8.0 及以上 | **0.36.5-beta.1** | [下载手机版 APK](https://github.com/JinCrown/doulivideo/releases/download/v0.36.5-beta.1/doulivideo-0.36.5-beta.1.apk) |
+| Windows 10/11 x64 | **0.14.22-beta.1** | [下载电脑版安装器](https://github.com/JinCrown/doulivideo/releases/download/v0.36.5-beta.1/DouliListen-0.14.22-beta.1-windows-x64-setup.exe) |
 
-2026-10-23 更新：电脑版调整平台切换按钮，合并播放页入口并清理本机收藏按钮；手机版仍为 0.35.9-beta.1。
-[查看更新内容](RELEASE_NOTES.md) · [完整发布页](https://github.com/JinCrown/doulivideo/releases/tag/windows-v0.14.14-beta.1) · [电脑版校验与组件材料](docs/releases/windows-v0.14.14-beta.1/README.md) · [手机版校验与组件材料](docs/releases/v0.35.9-beta.1/README.md)。
+2026-10-25 更新：手机和电脑、B站和抖音均新增可搜索及排序的关注作者列表；同时补齐关注内容页、播放器评论与字幕开关，并修复电脑版加载及播放状态冲突。
+[查看更新内容](RELEASE_NOTES.md) · [完整发布页](https://github.com/JinCrown/doulivideo/releases/tag/v0.36.5-beta.1) · [电脑版校验与组件材料](docs/releases/v0.36.5-beta.1/README.md) · [手机版校验与组件材料](docs/releases/v0.36.5-beta.1/README.md)。
 
 普通用户按设备下载 **APK** 或 **Windows setup.exe** 即可，不需要下载 GitHub 自动生成的 Source code 压缩包。
 Android 沿用原有发布签名；Windows 使用固定自签名内测身份，仍可能显示系统信任提示。具体升级、签名及校验说明见版本材料页。
@@ -108,6 +108,7 @@ Android 沿用原有发布签名；Windows 使用固定自签名内测身份，�
 - **搜索与推荐**：搜索想听的视频和作者，按分类发现内容，刷到下一条继续听。
 - **提前准备下一条**：按网络设置预加载封面和播放开头，减少切换时的等待；实际速度取决于网络和平台响应。
 - **收藏与合集**：使用对应平台的收藏夹、合集及作者收藏入口。
+- **关注内容与作者**：查看关注作者的动态和视频；从「我的 → 关注」打开作者列表，支持全列表搜索及三种排序。
 - **B站分 P**：多分 P 内容可通过按钮选择；向下刷切换到下一个视频，不必依次刷完整个分 P。
 - **稍后再听**：B站收藏页提供「稍后再听」入口，把想听的内容留到有空时。
 
@@ -154,7 +155,7 @@ B站与抖音都可选择**仅音频**或**视频（含声音）**。
 本应用不是 B站或抖音官方客户端，未获平台官方授权；平台接口、账号权限和验证要求变化可能影响功能。
 视频、音频、字幕、头像及平台标识的权利归各自权利人。
 
-第三方组件遵循各自许可证，相关许可随安装包提供；SoundTouch 的对应组件源码和替换说明见 [版本材料页](docs/releases/v0.35.9-beta.1/README.md)，**不包含应用业务源码**。
+第三方组件遵循各自许可证，相关许可随安装包提供；SoundTouch 的对应组件源码和替换说明见 [版本材料页](docs/releases/v0.36.5-beta.1/README.md)，**不包含应用业务源码**。
 
 [隐私与本地数据](docs/PRIVACY.md) · [第三方说明](THIRD_PARTY_NOTICES.txt)
 
