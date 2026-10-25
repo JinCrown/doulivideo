@@ -56,6 +56,18 @@ jobs:
           tar -xzf "$work/source.tar.gz" -C "$work/source"
           rm "$work/source.tar.gz"
           echo 'Private build input verified.'
+      - name: Prepare Mac playback and login dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          work="$RUNNER_TEMP/douli-private"
+          cd "$work/source"
+          if bash scripts/prepare-macos-runtime.sh >"$work/build.log" 2>&1; then
+            echo 'Native Mac playback dependencies prepared.'
+          else
+            echo 'Mac runtime preparation failed. Diagnostics are encrypted.'
+            exit 1
+          fi
       - name: Build, test and verify Mac package
         id: build
         shell: bash
@@ -63,7 +75,7 @@ jobs:
           set -euo pipefail
           work="$RUNNER_TEMP/douli-private"
           cd "$work/source"
-          if bash scripts/build-macos-preview.sh >"$work/build.log" 2>&1; then
+          if DOULI_RUNTIME_PREPARED=1 bash scripts/build-macos-preview.sh >>"$work/build.log" 2>&1; then
             echo 'Compilation, tests, native playback, architecture and package checks passed.'
           else
             echo 'Mac build failed. Diagnostics are encrypted for the project owner.'
@@ -94,7 +106,7 @@ jobs:
           mkdir -p "$work" "$RUNNER_TEMP/douli-diagnostics"
           touch "$work/build.log" "$work/download.log"
           tar -czf "$work/diagnostics.tar.gz" -C "$work" build.log download.log
-          openssl rand -out "$work/log.pass" 32
+          openssl rand -hex 32 > "$work/log.pass"
           openssl enc -aes-256-cbc -salt -pbkdf2 -iter 200000 -in "$work/diagnostics.tar.gz" -out "$RUNNER_TEMP/douli-diagnostics/build.tar.gz.enc" -pass "file:$work/log.pass"
           openssl pkeyutl -encrypt -pubin -inkey .github/mac-log-public.pem -in "$work/log.pass" -out "$RUNNER_TEMP/douli-diagnostics/log.key.enc" -pkeyopt rsa_padding_mode:oaep -pkeyopt rsa_oaep_md:sha256
       - uses: actions/upload-artifact@v4
@@ -104,3 +116,4 @@ jobs:
           path: ${{ runner.temp }}/douli-diagnostics/*
           retention-days: 1
           if-no-files-found: error
+
